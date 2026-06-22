@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>问鼎娱乐 · 轻松识别 快速上手</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f6fafb;
+      color: #1e2b2f;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.5rem 0 3rem;
+    }
+
+    /* ----- HERO ----- */
+    .hero {
+      background: linear-gradient(145deg, #d8f0f0 0%, #bde3e0 100%);
+      border-radius: 2.5rem 2.5rem 1.5rem 1.5rem;
+      padding: 3rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 20px rgba(60, 130, 120, 0.08);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -30%;
+      width: 300px;
+      height: 300px;
+      background: rgba(70, 180, 160, 0.08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #124a4a;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 span {
+      color: #1d7a70;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 0 0.4rem;
+      border-radius: 40px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0.8rem auto 0;
+      color: #295c57;
+      font-weight: 400;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: #ffffffcc;
+      backdrop-filter: blur(4px);
+      padding: 0.5rem 1.6rem;
+      border-radius: 60px;
+      color: #034e4a;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid #b1d8d3;
+    }
+
+    /* ----- GRID 卡片区域 (优势 & 说明混合) ----- */
+    .grid-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 2rem;
+      padding: 1.8rem 1.5rem 1.5rem;
+      box-shadow: 0 6px 16px rgba(30, 75, 70, 0.06);
+      transition: transform 0.15s, box-shadow 0.2s;
+      border: 1px solid #ddeadf;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 24px rgba(40, 110, 100, 0.08);
+    }
+
+    .card .icon-badge {
+      display: inline-block;
+      background: #c9e8e4;
+      color: #115e57;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      margin-bottom: 0.8rem;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #094c47;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #3e5d59;
+      margin-top: 0.3rem;
+    }
+
+    .card .highlight {
+      color: #1b786d;
+      font-weight: 500;
+    }
+
+    /* ----- 说明区 / 一句话聚焦 ----- */
+    .focus-area {
+      background: #dfefe9;
+      border-radius: 2rem;
+      padding: 2rem 2rem 2rem 2.5rem;
+      margin-bottom: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .focus-area .focus-text {
+      flex: 2 1 240px;
+    }
+
+    .focus-area .focus-text h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #0b524b;
+      margin-bottom: 0.4rem;
+    }
+
+    .focus-area .focus-text p {
+      color: #2c615a;
+      font-size: 1rem;
+      max-width: 480px;
+    }
+
+    .focus-area .focus-link {
+      flex: 1 1 140px;
+      text-align: right;
+    }
+
+    .focus-area .focus-link a {
+      display: inline-block;
+      background: #146b61;
+      color: white;
+      font-weight: 600;
+      padding: 0.75rem 2rem;
+      border-radius: 60px;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 8px rgba(20, 90, 80, 0.12);
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .focus-area .focus-link a:hover {
+      background: #0a5a52;
+      transform: scale(1.02);
+    }
+
+    /* ----- FAQ摘要 (蓝绿点缀) ----- */
+    .faq-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-left: 6px solid #339b8b;
+      padding: 1.2rem 1.6rem;
+      border-radius: 18px;
+      box-shadow: 0 2px 6px rgba(30, 90, 80, 0.04);
+    }
+
+    .faq-item .q {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #074e47;
+    }
+
+    .faq-item .a {
+      color: #3a6059;
+      margin-top: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    /* ----- 底部链接 (更丰富) ----- */
+    .bottom-links {
+      border-top: 1px solid #cfe0db;
+      padding-top: 2rem;
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem 0.8rem;
+    }
+
+    .bottom-links .col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.8rem;
+    }
+
+    .bottom-links a {
+      color: #1e7168;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .bottom-links a:hover {
+      border-bottom-color: #1e7168;
+    }
+
+    .bottom-links .brand {
+      color: #1b5c55;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .dot-sep {
+      color: #9bbbb4;
+      font-size: 0.8rem;
+      margin: 0 0.1rem;
+    }
+
+    /* 移动端调整 */
+    @media (max-width: 600px) {
+      .hero {
+        padding: 2rem 1.2rem;
+        border-radius: 2rem 2rem 1.5rem 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .focus-area {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .focus-area .focus-link {
+        text-align: left;
+        width: 100%;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .bottom-links,
+      .bottom-links .col {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .container {
+        padding: 1rem 0 2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .faq-item {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HERO 区：快速识别用途 -->
+  <section class="hero">
+    <h1><span>问鼎</span>娱乐</h1>
+    <p>一眼看清平台定位 · 轻松找到你需要的方向</p>
+    <div class="hero-tag">🔍 聚焦 · 快速识别</div>
+  </section>
+
+  <!-- 优势 + 说明 混合网格 -->
+  <div class="grid-section">
+    <div class="card">
+      <div class="icon-badge">🎯 直观</div>
+      <h3>清晰的信息结构</h3>
+      <p>每个模块都围绕<span class="highlight">你感兴趣的内容</span>展开，省去翻找的麻烦。</p>
+    </div>
+    <div class="card">
+      <div class="icon-badge">🧩 轻量</div>
+      <h3>低门槛体验</h3>
+      <p>无论使用何种设备，页面响应迅速，卡片布局让你一目十行。</p>
+    </div>
+    <div class="card">
+      <div class="icon-badge">🌐 场景友好</div>
+      <h3>多场景覆盖</h3>
+      <p>从查阅资讯到快速了解平台特色，<span class="highlight">问鼎娱乐</span>提供一致的操作预期。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 · 一句话锚点 + 链接自然嵌入 -->
+  <div class="focus-area">
+    <div class="focus-text">
+      <h2>快速识别：它是做什么的？</h2>
+      <p>如果你正在寻找一个能直接呈现内容价值的站点，<a href="https://web-wendingent.com" style="color: #146b61; text-decoration: underline;">问鼎娱乐</a>希望成为你的选择之一。没有复杂引导，只有实在的版块与功能说明。</p>
+    </div>
+    <div class="focus-link">
+      <a href="https://web-wendingent.com">问鼎娱乐</a>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要（蓝绿点缀） -->
+  <div class="faq-summary">
+    <div class="faq-item">
+      <div class="q">❓ 这个网站主要提供什么内容？</div>
+      <div class="a">聚焦娱乐领域的信息聚合与互动场景，你可以通过导航快速找到对应模块。具体方向建议直接浏览 <a href="https://web-wendingent.com" style="color: #1b786d;">问鼎娱乐</a> 首页。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">❓ 移动端浏览体验如何？</div>
+      <div class="a">页面采用卡片网格及响应式设计，在手机上同样保持整洁排版，按钮和链接都易于点按。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">❓ 是否需要登录或注册才能访问？</div>
+      <div class="a">访客可以直接浏览大部分内容，具体使用方式以站内指引为准。你随时可以从 <a href="https://web-wendingent.com" style="color: #1b786d;">问鼎娱乐</a> 获得第一手信息。</div>
+    </div>
+  </div>
+
+  <!-- 底部链接区 (包含多个a) -->
+  <footer class="bottom-links">
+    <div class="col">
+      <span class="brand">◎ 问鼎娱乐</span>
+      <a href="https://web-wendingent.com">问鼎娱乐</a>
+      <span class="dot-sep">·</span>
+      <a href="#">常见问题</a>
+      <a href="#">内容指引</a>
+    </div>
+    <div class="col">
+      <span style="color: #5e857e; font-size: 0.9rem;">© 2025 · 生活化质感</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
